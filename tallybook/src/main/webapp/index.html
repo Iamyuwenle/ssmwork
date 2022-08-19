@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<script src="/js/vue.js"></script>-->
+</head>
+<body>
+    <div id="app">
+        <h3 align="center">记账管理</h3>
+        <div align="center">
+            类型:<select>
+            <option>不限</option>
+            <option>支出</option>
+            <option>收入</option>
+            <option>转账</option>
+            <option>借出</option>
+            <option>借入</option>
+            <option>换入</option>
+            <option>还出</option>
+            </select>
+            时间:<input type="text"> 到
+            <input type="text">
+            <button value="搜索">搜索</button>
+            <button value="记账">记账</button>
+            <table border="1px" cellspacing="0" cellpadding="0" width="700px">
+                <th>标题</th>
+                <th>记账时间</th>
+                <th>类别</th>
+                <th>金额</th>
+                <th>说明</th>
+                <tr v-for="bills in mylist">
+                    <td>{{bills.title}}</td>
+                    <td v-text="new Date(bills.billTime).toLocaleString()"></td>
+                    <!--<td>{{bills.bill_time}}</td>-->
+                    <td>{{bills.type_id}}</td>
+                    <td>{{bills.price}}</td>
+                    <td>{{bills.explains}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    new Vue( {
+        el:"#app",
+        data: {
+            mylist:{},
+            url:"http://localhost:8080/tallybook/"
+        },
+
+        methods: {
+            //全查方法
+            billsAll() {
+                //发送axios请求
+                axios.get(this.url+"billsAll").then(item=> {
+                    this.mylist=item.data
+                })
+            }
+        },
+        created() {
+            this.billsAll();
+        }
+    })
+</script>

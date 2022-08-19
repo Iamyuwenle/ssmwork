@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tallybook:war">
+    <output-path>$PROJECT_DIR$/tallybook/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tallybook</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="day_20220810.war">
+      <element id="artifact" artifact-name="tallybook:war exploded" />
+    </root>
+  </artifact>
+</component>

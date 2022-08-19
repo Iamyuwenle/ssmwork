@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.le.mapper.BillsMapper">
+  <resultMap id="BaseResultMap" type="com.le.entity.Bills">
+    <!--@mbg.generated-->
+    <!--@Table bills-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="bill_time" jdbcType="DATE" property="billTime" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="explains" jdbcType="VARCHAR" property="explains" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, title, bill_time, type_id, price, explains
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from bills
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from bills
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.le.entity.Bills" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bills (title, bill_time, type_id, 
+      price, explains)
+    values (#{title,jdbcType=VARCHAR}, #{billTime,jdbcType=DATE}, #{typeId,jdbcType=INTEGER}, 
+      #{price,jdbcType=DOUBLE}, #{explains,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.le.entity.Bills" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into bills
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null and title != ''">
+        title,
+      </if>
+      <if test="billTime != null">
+        bill_time,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="explains != null and explains != ''">
+        explains,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null and title != ''">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="billTime != null">
+        #{billTime,jdbcType=DATE},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="explains != null and explains != ''">
+        #{explains,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.le.entity.Bills">
+    <!--@mbg.generated-->
+    update bills
+    <set>
+      <if test="title != null and title != ''">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="billTime != null">
+        bill_time = #{billTime,jdbcType=DATE},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="explains != null and explains != ''">
+        explains = #{explains,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.le.entity.Bills">
+    <!--@mbg.generated-->
+    update bills
+    set title = #{title,jdbcType=VARCHAR},
+      bill_time = #{billTime,jdbcType=DATE},
+      type_id = #{typeId,jdbcType=INTEGER},
+      price = #{price,jdbcType=DOUBLE},
+      explains = #{explains,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--List<Bills> getAllBills()-->
+  <select id="getAllBills" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from bills
+</select>
+</mapper>
