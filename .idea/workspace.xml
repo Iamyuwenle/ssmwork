@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a2c307b-2937-4a7b-98f4-33f16edafc63" name="Default Changelist" comment="2022/8/19&#10;提交一次&#10;二次修改">
+    <list default="true" id="0a2c307b-2937-4a7b-98f4-33f16edafc63" name="Default Changelist" comment="2022/8/19&#10;提交一次&#10;二次修改&#10;二次修改2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tallybook/mytxt" beforeDir="false" afterPath="$PROJECT_DIR$/tallybook/mytxt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660895140252</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2022/8/19&#10;提交一次&#10;二次修改&#10;二次修改2">
+      <created>1660896340192</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660896340192</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +319,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2022/8/19&#10;提交一次&#10;二次修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022/8/19&#10;提交一次&#10;二次修改" />
+    <MESSAGE value="2022/8/19&#10;提交一次&#10;二次修改&#10;二次修改2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022/8/19&#10;提交一次&#10;二次修改&#10;二次修改2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
